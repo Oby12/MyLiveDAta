@@ -15,6 +15,7 @@ class MainViewModel : ViewModel() {
     }
 
     private val mInitialTime = SystemClock.elapsedRealtime()
+    //MutableLiveData bisa kita ubah value-nya
     private val mElapsedTime = MutableLiveData<Long?>()
 
     init {
@@ -29,7 +30,7 @@ class MainViewModel : ViewModel() {
 
     //tambahkan obyek LiveData yang nantinya akan di-subscribe oleh MainActivity.
 
-    fun getElapsedTime(): LiveData<Long?> {
+    fun getElapsedTime(): LiveData<Long?> {  //<-sedangkan LiveData bersifat Read-Only.
         return mElapsedTime
     }
 }
